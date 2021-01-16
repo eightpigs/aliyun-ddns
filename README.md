@@ -1,60 +1,48 @@
 # Aliyun-DDNS
 
-获取当前公网IP动态修改阿里云DNS。
-
-**不支持批量修改，若需要批量修改请自行调整。**
+获取当前公网IP并动态修改阿里云DNS。
 
 ## 使用
 
-#### 修改配置
-
-修改`aliyun-ddns.py`中`14-24`行的域名和API AccessKey配置
-
-```python
-# 要修改的主机记录
-RECORD_RR = '@'
-# 要操作的域名
-DOMAIN = 'aliyun.com'
-
-# 阿里云AccessKey ID
-ACCESSKEY_ID = 'hello '
-# 阿里云AccessKey Secret
-ACCESSKEY_SECRET = 'world.'
-
-AREA = 'cn-hangzhou'
-```
+请阅读 [example config.yaml](./config.yaml)
 
 #### 运行
 
 ```shell
 pip3 install -r requirements.txt
-python3 ./aliyun-ddns.py
+# 可指定配置文件路径
+python3 ./aliyun-ddns.py [~/.config/ddns-config.yaml]
 ```
 
 运行结果
 
 ```
 ------------------ Aliyun DDNS ------------------
--------------- 2021-01-03 15:44:00 --------------
+-------------- 2021-01-01 01:01:01 --------------
 -------------------------------------------------
 
-=> Info:
-        Domain: aliyun.com
-        RR:     @
+=> Config path:
+   ./config.yaml
 
-=> Record:
-        Status:   ENABLE
-        RR:       @
-        Value:    127.0.0.1
-        RecordId: 123123123123132123
+=> IP: 111.111.111.111
 
-=> IP: 123.11.11.11
+=> Domain: aliyun.com
+     - [Skip] www
+   Update:
+     - [True] @
+     - [True] api
+   Add:
+     - [True] console
+     - [True] dns.console
+     - [False] ecs.console
 
-=> Updated: True
+=> Domain: baidu.com
+   ...
 
----------------------- End ----------------------
+=> Domain: qq.com
+   ...
+-------------------------------------------------
 ```
-
 
 #### 定时运行
 

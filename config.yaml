@@ -1,0 +1,35 @@
+accesskey:
+  ak1:
+    id: 'ACCESSKEY_ID'
+    secret: 'ACCESSKEY_SECRET'
+    area: 'cn-hangzhou'
+  ak2:
+    id: 'ACCESSKEY_ID'
+    secret: 'ACCESSKEY_SECRET'
+    area: 'cn-hangzhou'
+
+domain:
+  aliyun.com:        # domain: aliyun.com
+    accesskey: ak1   # accesskey[ak1]
+    hosts:
+      www:           # www.aliyun.com
+      '@':           # aliyun.com
+      api:           # api.aliyun.com
+      console:
+      - '@'          # console.aliyun.com
+      - dns          # dns.console.aliyun.com
+      - ecs          # ecs.console.aliyun.com
+      admin:
+        xx.xx.xx:    # xx.xx.xx.admin.aliyun.com
+  baidu.com:
+    accesskey: ak2
+    hosts:
+      www:
+      baike:
+      images:
+      '@':
+  qq.com:
+    accesskey: ak2
+    hosts:
+      www:
+      im:
