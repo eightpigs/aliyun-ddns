@@ -2,6 +2,8 @@
 
 获取当前公网IP并动态修改阿里云DNS。
 
+Related: [eightpigs/ddns-scripts-alidns](https://github.com/eightpigs/ddns-scripts-alidns)
+
 ## 使用
 
 请阅读 [example config.yaml](./config.yaml)
